@@ -36,16 +36,16 @@ services:
     depends_on: 
     - redis
     - mongodb
-  # cart:
-  #   image: praneeth2701/cart:v1
-  #   container_name: cart
-  #   environment:
-  #     REDIS_HOST: "redis" 
-  #     CATALOGUE_HOST: "catalogue" 
-  #     CATALOGUE_PORT: "8080"
-  #   depends_on: 
-  #   - catalogue
-  #   - redis
+  cart:
+    image: praneeth2701/cart:v2
+    container_name: cart
+    environment:
+      REDIS_HOST: "redis" 
+      CATALOGUE_HOST: "catalogue" 
+      CATALOGUE_PORT: "8080"
+    depends_on: 
+    - catalogue
+    - redis
   # mysql:
   #   image: praneeth2701/mysql:v1
   #   container_name: mysql
