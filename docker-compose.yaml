@@ -62,12 +62,14 @@ services:
     depends_on:
     - mysql
     - cart
-  # rabbitmq:
-  #   image: praneeth2701/rabbitmq:v1
-  #   container_name: rabbitmq
-  #   environment:
-  #     RABBITMQ_DEFAULT_USER: "roboshop" 
-  #     RABBITMQ_DEFAULT_PASS: "roboshop123"
+  rabbitmq:
+    image: praneeth2701/rabbitmq:v1
+    container_name: rabbitmq
+    volumes:
+    - rabbitmq:/var/lib/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "roboshop" 
+      RABBITMQ_DEFAULT_PASS: "roboshop123"
   # payment:
   #   image: praneeth2701/payment:v1
   #   container_name: payment
