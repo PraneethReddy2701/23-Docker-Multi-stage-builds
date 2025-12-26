@@ -63,7 +63,7 @@ services:
     - mysql
     - cart
   rabbitmq:
-    image: praneeth2701/rabbitmq:v1
+    image: praneeth2701/rabbitmq:v2
     container_name: rabbitmq
     volumes:
     - rabbitmq:/var/lib/rabbitmq
