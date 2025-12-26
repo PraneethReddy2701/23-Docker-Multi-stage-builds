@@ -46,11 +46,13 @@ services:
     depends_on: 
     - catalogue
     - redis
-  # mysql:
-  #   image: praneeth2701/mysql:v1
-  #   container_name: mysql
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: RoboShop@1
+  mysql:
+    image: praneeth2701/mysql:v1
+    container_name: mysql
+    volumes:
+    - mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: RoboShop@1
   # shipping:
   #   image: praneeth2701/shipping:v1
   #   container_name: shipping
