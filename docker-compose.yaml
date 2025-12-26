@@ -47,7 +47,7 @@ services:
     - catalogue
     - redis
   mysql:
-    image: praneeth2701/mysql:v1
+    image: praneeth2701/mysql:v2
     container_name: mysql
     volumes:
     - mysql:/var/lib/mysql
