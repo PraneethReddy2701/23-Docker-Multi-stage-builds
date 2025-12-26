@@ -14,7 +14,7 @@ services:
     volumes:
     - mongodb:/data/db  # mounting the above created volumes here
   catalogue:
-    image: praneeth2701/catalogue:v1
+    image: praneeth2701/catalogue:v2
     container_name: catalogue
     environment:
       MONGO: "true"
