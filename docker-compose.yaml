@@ -21,9 +21,11 @@ services:
       MONGO_URL: "mongodb://mongodb:27017/catalogue"
     depends_on: 
     - mongodb
-  # redis:
-  #   image: praneeth2701/redis:v1
-  #   container_name: redis
+  redis:
+    image: praneeth2701/redis:v2
+    container_name: redis
+    volumes:
+    - redis:/data
   # user:
   #   image: praneeth2701/user:v1
   #   container_name: user
