@@ -2,11 +2,17 @@ networks:
   default:
     driver: bridge
     name: roboshop
-
+volumes:
+  mongodb:
+  redis:
+  mysql:
+  rabbitmq: # this is equivalent to docker volume create rabbitmq
 services:
   mongodb:
     image: praneeth2701/mongodb:v2
     container_name: mongodb
+    volumes:
+    - mongodb: /data/db  # mounting the above created volumes here
   # catalogue:
   #   image: praneeth2701/catalogue:v1
   #   container_name: catalogue
