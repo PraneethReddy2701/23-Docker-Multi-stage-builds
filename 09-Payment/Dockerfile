@@ -10,7 +10,7 @@ RUN pip3 install -r requirements.txt
 FROM python:3.9.23-alpine3.22
 WORKDIR /opt/server
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
-USER roboshop
+# USER roboshop
 COPY --from=builder /opt/server /opt/server
 COPY --from=builder /usr/local /usr/local
 CMD ["uwsgi", "--ini", "payment.ini"]
